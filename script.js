@@ -1,30 +1,23 @@
-
-
 (function() {
-    // ========== DOM ELEMENTS ==========
+    // DOM elements
     const navLinks = document.querySelectorAll('.nav-links a');
     const projectCards = document.querySelectorAll('.project-card');
-    const footerYear = document.querySelector('.footer p:nth-child(3)');
     const heroImage = document.querySelector('.hero-image');
+    const skillChips = document.querySelectorAll('.skill-chip');
     
-    // ========== INITIALIZATION ==========
-    console.log('✨ Portfolio loaded — deep purple mode activated');
+    console.log('Portfolio loaded');
     
-    // ========== NAVIGATION HIGHLIGHT ==========
-    // Add active state to clicked nav links
+    // nav click highlight
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Remove active state from all links
             navLinks.forEach(l => {
                 l.style.borderBottomColor = 'transparent';
                 l.style.color = '#ddd0ec';
             });
             
-            // Highlight clicked link
             this.style.borderBottomColor = '#b27bf5';
             this.style.color = '#ffffff';
             
-            // Smooth scroll to section (if hash exists)
             const href = this.getAttribute('href');
             if (href && href !== '#') {
                 e.preventDefault();
@@ -39,8 +32,7 @@
         });
     });
     
-    // ========== ACTIVE NAV ON SCROLL ==========
-    // Highlight nav links based on scroll position
+    // active nav on scroll
     window.addEventListener('scroll', function() {
         const sections = {
             'home': document.querySelector('.hero'),
@@ -49,7 +41,7 @@
             'contact': document.getElementById('contact')
         };
         
-        const scrollPosition = window.scrollY + 200; // Offset for better UX
+        const scrollPosition = window.scrollY + 200;
         
         for (const [key, section] of Object.entries(sections)) {
             if (section) {
@@ -57,13 +49,11 @@
                 const sectionBottom = sectionTop + section.offsetHeight;
                 
                 if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    // Remove active from all
                     navLinks.forEach(l => {
                         l.style.borderBottomColor = 'transparent';
                         l.style.color = '#ddd0ec';
                     });
                     
-                    // Find and highlight matching nav link
                     const matchingLink = Array.from(navLinks).find(link => 
                         link.getAttribute('href') === `#${key}` || 
                         (key === 'home' && link.getAttribute('href') === '#')
@@ -78,79 +68,47 @@
         }
     });
     
-    // ========== PROJECT CARDS INTERACTION ==========
-    projectCards.forEach((card, index) => {
-        // Add data attribute for animation
-        card.setAttribute('data-index', index);
-        
-        // Mouse move parallax effect (subtle)
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const moveX = (x - centerX) / 20;
-            const moveY = (y - centerY) / 20;
-            
-            this.style.transform = `translateY(-12px) scale(1.02) rotateX(${moveY}deg) rotateY(${moveX}deg)`;
-        });
-        
-        // Reset on mouse leave
+    // project card hover reset
+    projectCards.forEach(card => {
         card.addEventListener('mouseleave', function() {
             this.style.transform = '';
-            setTimeout(() => {
-                this.style.transition = 'all 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.2)';
-            }, 100);
         });
     });
     
-    // ========== HERO IMAGE INTERACTION ==========
+    // hero image parallax effect
     if (heroImage) {
-        // Add floating effect with mouse follow
         document.addEventListener('mousemove', function(e) {
             const mouseX = e.clientX / window.innerWidth;
             const mouseY = e.clientY / window.innerHeight;
-            
-            const moveX = (mouseX - 0.5) * 20;
-            const moveY = (mouseY - 0.5) * 20;
-            
-            heroImage.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${moveX * 0.5}deg)`;
+            const moveX = (mouseX - 0.5) * 15;
+            const moveY = (mouseY - 0.5) * 15;
+            heroImage.style.transform = `translate(${moveX}px, ${moveY}px)`;
         });
         
-        // Reset on mouse leave window
         document.addEventListener('mouseleave', function() {
             heroImage.style.transform = '';
         });
     }
     
-    // ========== SKILL CHIPS ANIMATION ==========
-    const skillChips = document.querySelectorAll('.skill-chip');
+    // skill chips animation
     skillChips.forEach((chip, index) => {
-        // Stagger animation on page load
         chip.style.opacity = '0';
-        chip.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.05}s`;
+        chip.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.03}s`;
         
-        // Add random rotation on hover for fun
         chip.addEventListener('mouseenter', function() {
-            const randomRotate = Math.random() * 6 - 3; // -3 to 3 degrees
-            this.style.transform = `translateY(-4px) scale(1.02) rotate(${randomRotate}deg)`;
+            this.style.transform = `translateY(-4px) scale(1.02)`;
+        });
+        
+        chip.addEventListener('mouseleave', function() {
+            this.style.transform = '';
         });
     });
     
-    // ========== DYNAMIC FOOTER YEAR ==========
-    if (footerYear) {
-        const currentYear = new Date().getFullYear();
-        footerYear.innerHTML = footerYear.innerHTML.replace('2025', currentYear);
-    }
-    
-    // ========== SMOOTH SCROLL FOR ALL INTERNAL LINKS ==========
+    // smooth scroll for all anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            if (href !== '#') {
+            if (href && href !== '#') {
                 e.preventDefault();
                 const target = document.querySelector(href);
                 if (target) {
@@ -163,7 +121,7 @@
         });
     });
     
-    // ========== ADD FADE-IN ANIMATION KEYFRAMES ==========
+    // add animation keyframes
     const style = document.createElement('style');
     style.textContent = `
         @keyframes fadeInUp {
@@ -178,36 +136,40 @@
         }
         
         .project-card, .info-col, .hero-content {
-            animation: fadeInUp 0.8s ease forwards;
+            animation: fadeInUp 0.6s ease forwards;
         }
         
+        .project-card:nth-child(1) { animation-delay: 0s; }
         .project-card:nth-child(2) { animation-delay: 0.1s; }
         .project-card:nth-child(3) { animation-delay: 0.2s; }
         .project-card:nth-child(4) { animation-delay: 0.3s; }
         .project-card:nth-child(5) { animation-delay: 0.4s; }
+        .project-card:nth-child(6) { animation-delay: 0.5s; }
+        .project-card:nth-child(7) { animation-delay: 0.6s; }
+        .project-card:nth-child(8) { animation-delay: 0.7s; }
+        .project-card:nth-child(9) { animation-delay: 0.8s; }
     `;
     document.head.appendChild(style);
     
-    // ========== PAGE LOAD ANIMATIONS ==========
-    window.addEventListener('load', function() {
-        // Trigger any post-load animations
-        console.log('🎨 All assets loaded — ready to impress!');
-        
-        // Add a subtle class to body
-        document.body.classList.add('loaded');
-    });
-    
-    
+    // responsive nav gap
     function checkMobileView() {
-        if (window.innerWidth <= 700) {
-            
-            document.querySelector('.nav-links').style.gap = '20px';
-        } else {
-            document.querySelector('.nav-links').style.gap = '36px';
+        const navLinksDiv = document.querySelector('.nav-links');
+        if (navLinksDiv) {
+            if (window.innerWidth <= 700) {
+                navLinksDiv.style.gap = '20px';
+            } else {
+                navLinksDiv.style.gap = '36px';
+            }
         }
     }
     
     window.addEventListener('resize', checkMobileView);
-    checkMobileView(); // Initial check
+    checkMobileView();
+    
+    // page load complete
+    window.addEventListener('load', function() {
+        console.log('Portfolio ready');
+        document.body.classList.add('loaded');
+    });
     
 })();
