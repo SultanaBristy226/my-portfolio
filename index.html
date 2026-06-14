@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habiba Sultana Bristy · portfolio</title>
-    <!-- Font Awesome 6 (free) for icons -->
+    <title>Habiba Sultana Bristy · Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <!-- Link to external JavaScript file - defer for better performance -->
-    <script src="script.js" defer></script>
     <style>
         * {
             margin: 0;
@@ -19,23 +15,21 @@
         }
 
         body {
-            background: #0b0710;  /* deep dark purple base */
+            background: #0b0710;
             color: #f0e6ff;
             line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* deep purple palette */
         :root {
-            --purple-deep: #4a1d6d;      /* primary deep purple */
-            --purple-medium: #7d3cb0;    /* hover / accent */
-            --purple-soft: #b38fdd;       /* light purple for text / borders */
-            --purple-bg-dark: #1e1029;    /* card/background */
+            --purple-deep: #4a1d6d;
+            --purple-medium: #7d3cb0;
+            --purple-soft: #b38fdd;
+            --purple-bg-dark: #1e1029;
             --purple-bg-soft: #2e1a3a;
             --purple-glow: rgba(123, 60, 176, 0.5);
         }
 
-        /* custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -50,14 +44,12 @@
             background: #9b4ddb;
         }
 
-        /* reusable container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* header / nav */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -100,7 +92,6 @@
             transform: translateY(-2px);
         }
 
-        /* headings */
         h1, h2, h3 {
             font-weight: 600;
             letter-spacing: -0.02em;
@@ -114,7 +105,6 @@
             display: inline-block;
         }
 
-        /* buttons / deep purple style */
         .btn-purple {
             background: transparent;
             border: 2px solid #7d3cb0;
@@ -136,7 +126,6 @@
             transform: scale(1.02);
         }
 
-        /* hero section */
         .hero {
             display: flex;
             flex-wrap: wrap;
@@ -192,10 +181,11 @@
             transition: 0.5s ease;
             animation: float 6s infinite alternate;
         }
-        .hero-image i {
-            font-size: 9rem;
-            color: #decbff;
-            filter: drop-shadow(0 0 10px #a37fdb);
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: inherit;
         }
         .hero-image:hover {
             border-color: #c9a6ff;
@@ -208,7 +198,6 @@
             100% { border-radius: 40% 50% 30% 60% / 50% 40% 60% 40%; transform: translateY(-15px); }
         }
 
-        /* chips / skill tags */
         .skill-chip {
             background: #2a1738;
             border: 1.5px solid #62369e;
@@ -230,20 +219,10 @@
             box-shadow: 0 0 18px #7d3cb0;
             transform: translateY(-4px) scale(1.02);
         }
-        /* make links inside chips behave */
-        .skill-chip a {
-            color: inherit;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .skill-chip a:hover {
-            text-decoration: underline;
-        }
 
-        /* project cards - 6 projects grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
@@ -293,27 +272,23 @@
             margin-top: auto;
             padding-top: 15px;
             border-top: 1px dashed #4b2d64;
+            flex-wrap: wrap;
         }
         .project-links a {
             color: #d6befa;
-            font-size: 1.3rem;
+            font-size: 1rem;
             transition: 0.2s;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
         }
         .project-links a:hover {
             color: #c9a2ff;
             transform: translateY(-3px);
             text-shadow: 0 0 12px #bb92ff;
         }
-        .project-links span {
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
 
-        /* two column layout for extra info */
         .info-row {
             display: flex;
             flex-wrap: wrap;
@@ -362,10 +337,8 @@
         .info-col a:hover {
             color: white;
             text-decoration: underline;
-            text-shadow: 0 0 8px #b27bf5;
         }
 
-        /* standard footer (like other websites) */
         .site-footer {
             background: #130b1c;
             border-top: 2px solid #4f2e73;
@@ -408,12 +381,12 @@
         .footer-col ul li i {
             color: #b27bf5;
             width: 20px;
-            font-size: 1rem;
         }
         .footer-social {
             display: flex;
             gap: 20px;
             margin-top: 15px;
+            flex-wrap: wrap;
         }
         .footer-social a {
             color: #d6befa;
@@ -433,7 +406,6 @@
             color: #a586c0;
         }
 
-    
         @media (max-width: 700px) {
             .navbar {
                 flex-direction: column;
@@ -460,7 +432,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- navigation -->
         <nav class="navbar">
             <div class="logo"> bristy.dev</div>
             <div class="nav-links">
@@ -471,30 +442,27 @@
             </div>
         </nav>
 
-        <!-- hero -->
         <div class="hero">
-    <div class="hero-content">
-        <div class="hero-badge">student</div>
-        <h1>I'm <span class="hero-name">Habiba Sultana Bristy</span></h1>
-        <div class="hero-university">
-            <i class="fas fa-university" style="margin-right: 10px;"></i> Bangladesh Army International University of Science 
-            & Technology <br> <span style="font-size: 1rem;">3rd year, 2nd semester</span>
+            <div class="hero-content">
+                <div class="hero-badge">student</div>
+                <h1>I'm <span class="hero-name">Habiba Sultana Bristy</span></h1>
+                <div class="hero-university">
+                    <i class="fas fa-university" style="margin-right: 10px;"></i> Bangladesh Army International University of Science & Technology <br> <span style="font-size: 1rem;">3rd year, 2nd semester</span>
+                </div>
+                <p class="hero-desc">
+                    Aspiring Software Engineer | Full stack developer | UI/UX designer | data science & ML | MERN Stack Developer
+                    <br>
+                    I blend creativity with algorithms.
+                </p>
+                <a href="#projects" class="btn-purple"><i class="fas fa-arrow-down" style="margin-right: 8px;"></i> explore my work</a>
+            </div>
+            <div class="hero-image">
+                <img src="photo.jpg" alt="Habiba Sultana Bristy">
+            </div>
         </div>
-        <p class="hero-desc">
-            Frontend developer | UI/UX designer | data science & ML.
-            <br>
-            I blend creativity with algorithms.
-        </p>
-        <a href="#projects" class="btn-purple"><i class="fas fa-arrow-down" style="margin-right: 8px;"></i> explore my work</a>
-    </div>
-    <div class="hero-image">
-        <img src="photo.jpg" alt="Habiba Sultana Bristy" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
-    </div>
-</div>
 
-        <!-- skills   -->
         <section id="skills" style="margin: 20px 0 20px;">
-            <h2> technical skill</h2>
+            <h2> technical skill & stack</h2>
             <div style="margin-bottom: 20px;">
                 <span class="skill-chip">UI/UX design</span>
                 <span class="skill-chip">Figma</span>
@@ -505,131 +473,159 @@
                 <span class="skill-chip">Django</span>
                 <span class="skill-chip">HTML5 & CSS3</span>
                 <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">React.js</span>
+                <span class="skill-chip">Node.js</span>
+                <span class="skill-chip">Express.js</span>
+                <span class="skill-chip">MongoDB</span>
+                <span class="skill-chip">MERN Stack</span>
+                <span class="skill-chip">Tailwind CSS</span>
                 <span class="skill-chip">pandas</span>
                 <span class="skill-chip">NumPy</span>
                 <span class="skill-chip">SQL</span>
-                <span class="skill-chip">scikit‑learn</span>
+                <span class="skill-chip">scikit-learn</span>
                 <span class="skill-chip">AI</span>
                 <span class="skill-chip">frontend</span>
-                <span class="skill-chip">responsive</span>
+                <span class="skill-chip">responsive design</span>
+                <span class="skill-chip">REST APIs</span>
             </div>
         </section>
 
-        <!-- project section   -->
         <section id="projects">
-            <h2>⚡ 6 featured projects</h2>
+            <h2> featured projects</h2>
             <div class="projects-grid">
-                <!-- UI/UX 1: My Court -->
                 <div class="project-card">
                     <div class="project-icon"><i class="fas fa-gavel"></i></div>
                     <h3>My Court</h3>
-                    <span class="project-tag">UI/UX  Legal Access Bangladesh</span>
+                    <span class="project-tag">UI/UX · Legal Access Bangladesh</span>
                     <p>Case study for improving legal access in Bangladesh. Complete UX research, wireframing, and high-fidelity prototype.</p>
                     <div class="project-links">
-                        <a href="https://www.behance.net/gallery/227085317/My-Court-Legal-Access-in-Bangladesh-Case-Study/modules/1299321165" target="_blank" rel="noopener"><i class="fab fa-behance"></i> <span>Behance</span></a>
+                        <a href="https://www.behance.net/gallery/227085317/My-Court-Legal-Access-in-Bangladesh-Case-Study/modules/1299321165" target="_blank"><i class="fab fa-behance"></i> Behance</a>
                     </div>
                 </div>
-                <!-- UI/UX 2: Prottoyon App -->
+
                 <div class="project-card">
                     <div class="project-icon"><i class="fas fa-hand-holding-heart"></i></div>
                     <h3>Prottoyon App</h3>
                     <span class="project-tag">UI/UX · Case Study</span>
                     <p>Inclusive design case study for an app focused on accessibility and community support.</p>
                     <div class="project-links">
-                        <a href="https://www.behance.net/gallery/226506831/Prottoyon-App-Case-Study/modules/1295506681" target="_blank" rel="noopener"><i class="fab fa-behance"></i> <span>Behance</span></a>
+                        <a href="https://www.behance.net/gallery/226506831/Prottoyon-App-Case-Study/modules/1295506681" target="_blank"><i class="fab fa-behance"></i> Behance</a>
                     </div>
                 </div>
-                <!-- frontend 1: TechWave (assignment-num2) -->
+
                 <div class="project-card">
                     <div class="project-icon"><i class="fas fa-podcast"></i></div>
                     <h3>TechWave</h3>
-                    <span class="project-tag">frontend  podcast landing</span>
+                    <span class="project-tag">frontend · podcast landing</span>
                     <p>Modern, responsive podcast landing page with episode cards and host section.</p>
                     <div class="project-links">
-                        <a href="https://sultanabristy226.github.io/assignment-num2/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> <span>Live</span></a>
-                        <a href="https://github.com/SultanaBristy226/assignment-num2" target="_blank" rel="noopener"><i class="fab fa-github"></i> <span>Code</span></a>
+                        <a href="https://sultanabristy226.github.io/assignment-num2/" target="_blank"><i class="fas fa-globe"></i> Live</a>
+                        <a href="https://github.com/SultanaBristy226/assignment-num2" target="_blank"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
-                <!-- frontend 2: Interactive Page (assignment-4) -->
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Interactive Page</h3>
-                    <span class="project-tag">frontend  assignment 4</span>
-                    <p>One of my interactive frontend practice projects — clean UI with purple accents.</p>
-                    <div class="project-links">
-                        <a href="https://sultanabristy226.github.io/assignment-4/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> <span>Live</span></a>
-                        <a href="https://github.com/SultanaBristy226/assignment-4" target="_blank" rel="noopener"><i class="fab fa-github"></i> <span>Code</span></a>
-                    </div>
-                </div>
-                <!-- frontend 3: Tea House -->
+
                 <div class="project-card">
                     <div class="project-icon"><i class="fas fa-mug-hot"></i></div>
                     <h3>Tea House</h3>
-                    <span class="project-tag">frontend  product landing</span>
+                    <span class="project-tag">frontend · product landing</span>
                     <p>Elegant landing page for a premium tea brand. Features product showcase and customer testimonials.</p>
                     <div class="project-links">
-                        <a href="https://sultanabristy226.github.io/Tea_House/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> <span>Live</span></a>
-                        <a href="https://github.com/SultanaBristy226/Tea_House" target="_blank" rel="noopener"><i class="fab fa-github"></i> <span>Code</span></a>
+                        <a href="https://sultanabristy226.github.io/Tea_House/" target="_blank"><i class="fas fa-globe"></i> Live</a>
+                        <a href="https://github.com/SultanaBristy226/Tea_House" target="_blank"><i class="fab fa-github"></i> Code</a>
                     </div>
                 </div>
-                <!-- frontend 4: Additional Project  -->
+
                 <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3>Creative Landing</h3>
-                    <span class="project-tag">frontend  design practice</span>
-                    <p>Another frontend exploration with modern animations, responsive layouts, and deep purple aesthetics.</p>
+                    <div class="project-icon"><i class="fas fa-store"></i></div>
+                    <h3>Qurbani Hat</h3>
+                    <span class="project-tag">full stack · MERN</span>
+                    <p>E-commerce platform for qurbani animal trading with user authentication and product management.</p>
                     <div class="project-links">
-                        <a href="https://sultanabristy226.github.io/assignment-4/" target="_blank" rel="noopener"><i class="fas fa-globe"></i> <span>Live</span></a>
-                        <a href="https://github.com/SultanaBristy226/assignment-4" target="_blank" rel="noopener"><i class="fab fa-github"></i> <span>Code</span></a>
+                        <a href="https://qurbani-hat-syxl.vercel.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Study Nook</h3>
+                    <span class="project-tag">full stack · client portal</span>
+                    <p>Interactive study platform for students with resource management and collaborative features.</p>
+                    <div class="project-links">
+                        <a href="https://study-nook-client-46py.vercel.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Digital Tools Platform</h3>
+                    <span class="project-tag">frontend · tool hub</span>
+                    <p>Collection of digital utility tools with clean interface and responsive design.</p>
+                    <div class="project-links">
+                        <a href="https://digitaltoolsflatform.netlify.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Keen Keepers</h3>
+                    <span class="project-tag">frontend · security</span>
+                    <p>Security awareness platform with modern UI and informative resources.</p>
+                    <div class="project-links">
+                        <a href="https://keen-keepers.netlify.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Benevolent Fox</h3>
+                    <span class="project-tag">frontend · nonprofit</span>
+                    <p>Nonprofit organization landing page with donation and volunteer sections.</p>
+                    <div class="project-links">
+                        <a href="https://benevolent-fox-c89254.netlify.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- extra info: education & contact -->
-<div class="info-row" id="contact">
-    <div class="info-col">
-        <h3><i class="fas fa-graduation-cap"></i> education</h3>
-        <div class="info-col">
-    <h3><i class="fas fa-graduation-cap"></i> education</h3>
-    <ul>
-        <li><i class="fas fa-university"></i> <strong>BSc</strong>Bangladesh Army International University of Science & Technology <br>CSE · 3rd year <br>CGPA 3.50</li>
-        <li><i class="fas fa-school"></i> <strong>HSC</strong><br>Ispahani Public School & College (2020-2021)<br>GPA 5.00</li>
-        <li><i class="fas fa-school"></i> <strong>SSC</strong><br>Cumilla Cantonment Board Girls High School (2018-2019)<br>GPA 5.00</li>
-    </ul>
-</div>
+        <div class="info-row" id="contact">
+            <div class="info-col">
+                <h3><i class="fas fa-graduation-cap"></i> education</h3>
+                <ul>
+                    <li><i class="fas fa-university"></i> <strong>BSc in CSE</strong><br>Bangladesh Army International University of Science & Technology <br>3rd year · CGPA 3.50</li>
+                    <li><i class="fas fa-school"></i> <strong>HSC</strong><br>Ispahani Public School & College (2020-2021)<br>GPA 5.00</li>
+                    <li><i class="fas fa-school"></i> <strong>SSC</strong><br>Cumilla Cantonment Board Girls High School (2018-2019)<br>GPA 5.00</li>
+                </ul>
+            </div>
+            
+            <div class="info-col">
+                <h3><i class="fas fa-paper-plane"></i> connect</h3>
+                <ul>
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:+8801837499226">+880 1837-499226</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:bristysultana4@gmail.com">bristysultana4@gmail.com</a></li>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com/SultanaBristy226" target="_blank">github.com/SultanaBristy226</a></li>
+                    <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sultana-bristy-830203311" target="_blank">linkedin.com/in/sultana-bristy</a></li>
+                </ul>
+            </div>
+            
+            <div class="info-col">
+                <h3><i class="fas fa-user"></i> more about me</h3>
+                <ul>
+                    <li><i class="fas fa-chart-line"></i> data science & ML with AI</li>
+                    <li><i class="fas fa-pencil-ruler"></i> 2 UI/UX projects (complete)</li>
+                    <li><i class="fas fa-file-code"></i> 6+ frontend & fullstack projects (live)</li>
+                    <li><i class="fas fa-brain"></i> numpy, pandas, SQL, django, MERN</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    
-    <div class="info-col">
-        <h3><i class="fas fa-paper-plane"></i> connect</h3>
-        <ul>
-            <li><i class="fas fa-phone-alt"></i> <a href="tel:+8801837499226">+880 1837-499226</a></li>
-            <li><i class="fas fa-envelope"></i> <a href="mailto:bristysultana4@gmail.com">bristysultana4@gmail.com</a></li>
-            <li><i class="fab fa-github"></i> <a href="https://github.com/SultanaBristy226" target="_blank" rel="noopener">github.com/SultanaBristy226</a></li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sultana-bristy-830203311" target="_blank" rel="noopener">linkedin.com/in/sultana-bristy</a></li>
-        </ul>
-    </div>
-    
-    <div class="info-col">
-        <h3><i class="fas fa-user"></i> more about me</h3>
-        <ul>
-            <li><i class="fas fa-chart-line"></i> data science & ML with AI</li>
-            <li><i class="fas fa-pencil-ruler"></i> 2 UI/UX projects (complete)</li>
-            <li><i class="fas fa-file-code"></i> 4+ frontend projects (live)</li>
-            <li><i class="fas fa-brain"></i> numpy, pandas, SQL, django</li>
-        </ul>
-    </div>
-</div>
-    
 
-    <!-- STANDARD FOOTER  -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-col">
                 <h4>Habiba Sultana Bristy</h4>
                 <ul>
                     <li><i class="fas fa-map-pin"></i> CSE 3rd Year, BAIUST</li>
-                    <li><i class="fas fa-code"></i> Frontend| UI/UX | ML  </li>
+                    <li><i class="fas fa-code"></i> Frontend | UI/UX | ML | MERN</li>
                     <li><i class="fas fa-award"></i> CGPA 3.50</li>
                 </ul>
             </div>
@@ -665,10 +661,7 @@
         </div>
         <div class="footer-bottom">
             <p>© 2026 Habiba Sultana Bristy · All rights reserved</p>
-            
         </div>
     </footer>
-
-    <!-- script.js remains the same -->
 </body>
 </html>
