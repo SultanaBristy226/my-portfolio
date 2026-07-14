@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character set and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habiba Sultana Bristy · Portfolio</title>
+    
+    <!-- Font Awesome 6 for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Font: Inter for modern typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    
     <style>
+        /* Reset all default margins and paddings */
         * {
             margin: 0;
             padding: 0;
@@ -14,6 +21,7 @@
             font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
+        /* Body styling with dark purple background */
         body {
             background: #0b0710;
             color: #f0e6ff;
@@ -21,6 +29,7 @@
             scroll-behavior: smooth;
         }
 
+        /* CSS Variables for consistent theming */
         :root {
             --purple-deep: #4a1d6d;
             --purple-medium: #7d3cb0;
@@ -30,6 +39,7 @@
             --purple-glow: rgba(123, 60, 176, 0.5);
         }
 
+        /* Custom scrollbar styles */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -44,12 +54,14 @@
             background: #9b4ddb;
         }
 
+        /* Container for max-width and centering */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
+        /* Navigation bar styles */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -59,6 +71,7 @@
             border-bottom: 1px solid #3d2550;
         }
 
+        /* Logo with gradient text */
         .logo {
             font-size: 1.9rem;
             font-weight: 700;
@@ -73,6 +86,7 @@
             text-shadow: 0 0 12px #b27bf5;
         }
 
+        /* Navigation links */
         .nav-links {
             display: flex;
             gap: 36px;
@@ -92,6 +106,7 @@
             transform: translateY(-2px);
         }
 
+        /* Headings */
         h1, h2, h3 {
             font-weight: 600;
             letter-spacing: -0.02em;
@@ -105,6 +120,7 @@
             display: inline-block;
         }
 
+        /* Purple button with hover effect */
         .btn-purple {
             background: transparent;
             border: 2px solid #7d3cb0;
@@ -126,6 +142,7 @@
             transform: scale(1.02);
         }
 
+        /* Hero section - flex layout */
         .hero {
             display: flex;
             flex-wrap: wrap;
@@ -137,6 +154,8 @@
         .hero-content {
             flex: 1 1 350px;
         }
+
+        /* Hero badge */
         .hero-badge {
             color: #b38fdd;
             text-transform: uppercase;
@@ -168,6 +187,8 @@
             color: #d3c0ec;
             margin: 28px 0 35px;
         }
+
+        /* Hero image with floating animation */
         .hero-image {
             flex: 0 0 280px;
             height: 280px;
@@ -193,11 +214,13 @@
             transform: scale(1.02) rotate(1deg);
         }
 
+        /* Floating animation keyframes */
         @keyframes float {
             0% { border-radius: 50% 30% 50% 30% / 40% 50% 40% 50%; transform: translateY(0); }
             100% { border-radius: 40% 50% 30% 60% / 50% 40% 60% 40%; transform: translateY(-15px); }
         }
 
+        /* Skill chips/tags */
         .skill-chip {
             background: #2a1738;
             border: 1.5px solid #62369e;
@@ -220,12 +243,15 @@
             transform: translateY(-4px) scale(1.02);
         }
 
+        /* Projects grid layout */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
             margin: 40px 0;
         }
+
+        /* Individual project card */
         .project-card {
             background: #1f122b;
             border-radius: 32px;
@@ -266,6 +292,8 @@
             flex-grow: 1;
             margin-bottom: 20px;
         }
+
+        /* Project links */
         .project-links {
             display: flex;
             gap: 20px;
@@ -289,6 +317,7 @@
             text-shadow: 0 0 12px #bb92ff;
         }
 
+        /* Info row - education and contact */
         .info-row {
             display: flex;
             flex-wrap: wrap;
@@ -339,6 +368,7 @@
             text-decoration: underline;
         }
 
+        /* Footer styles */
         .site-footer {
             background: #130b1c;
             border-top: 2px solid #4f2e73;
@@ -406,6 +436,7 @@
             color: #a586c0;
         }
 
+        /* Responsive design for mobile */
         @media (max-width: 700px) {
             .navbar {
                 flex-direction: column;
@@ -432,6 +463,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- ========== NAVIGATION ========== -->
         <nav class="navbar">
             <div class="logo"> bristy.dev</div>
             <div class="nav-links">
@@ -442,6 +474,7 @@
             </div>
         </nav>
 
+        <!-- ========== HERO SECTION ========== -->
         <div class="hero">
             <div class="hero-content">
                 <div class="hero-badge">student</div>
@@ -461,6 +494,7 @@
             </div>
         </div>
 
+        <!-- ========== SKILLS SECTION ========== -->
         <section id="skills" style="margin: 20px 0 20px;">
             <h2> technical skill & stack</h2>
             <div style="margin-bottom: 20px;">
@@ -490,184 +524,206 @@
             </div>
         </section>
 
+        <!-- ========== PROJECTS SECTION ========== -->
         <section id="projects">
-    <h2> featured projects</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <div class="project-icon"><i class="fas fa-gavel"></i></div>
-            <h3>My Court</h3>
-            <span class="project-tag">UI/UX · Legal Access Bangladesh</span>
-            <p>Case study for improving legal access in Bangladesh. Complete UX research, wireframing, and high-fidelity prototype.</p>
-            <div class="project-links">
-                <a href="https://www.behance.net/gallery/227085317/My-Court-Legal-Access-in-Bangladesh-Case-Study/modules/1299321165" target="_blank"><i class="fab fa-behance"></i> Behance</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-icon"><i class="fas fa-hand-holding-heart"></i></div>
-            <h3>Prottoyon App</h3>
-            <span class="project-tag">UI/UX · Case Study</span>
-            <p>Inclusive design case study for an app focused on accessibility and community support.</p>
-            <div class="project-links">
-                <a href="https://www.behance.net/gallery/226506831/Prottoyon-App-Case-Study/modules/1295506681" target="_blank"><i class="fab fa-behance"></i> Behance</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-icon"><i class="fas fa-podcast"></i></div>
-            <h3>TechWave</h3>
-            <span class="project-tag">frontend · podcast landing</span>
-            <p>Modern, responsive podcast landing page with episode cards and host section.</p>
-            <div class="project-links">
-                <a href="https://sultanabristy226.github.io/assignment-num2/" target="_blank"><i class="fas fa-globe"></i> Live</a>
-                <a href="https://github.com/SultanaBristy226/assignment-num2" target="_blank"><i class="fab fa-github"></i> Code</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-icon"><i class="fas fa-mug-hot"></i></div>
-            <h3>Tea House</h3>
-            <span class="project-tag">frontend · product landing</span>
-            <p>Elegant landing page for a premium tea brand. Features product showcase and customer testimonials.</p>
-            <div class="project-links">
-                <a href="https://sultanabristy226.github.io/Tea_House/" target="_blank"><i class="fas fa-globe"></i> Live</a>
-                <a href="https://github.com/SultanaBristy226/Tea_House" target="_blank"><i class="fab fa-github"></i> Code</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-icon"><i class="fas fa-store"></i></div>
-            <h3>Qurbani Hat</h3>
-            <span class="project-tag">full stack · MERN</span>
-            <p>E-commerce platform for qurbani animal trading with user authentication and product management.</p>
-            <div class="project-links">
-                <a href="https://qurbani-hat-syxl.vercel.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
-                <a href="https://github.com/SultanaBristy226/QurbaniHat" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-icon"><i class="fas fa-book-open"></i></div>
-            <h3>Study Nook</h3>
-            <span class="project-tag">full stack · MERN</span>
-            <p>Interactive study platform for students with resource management and collaborative features.</p>
-            <div class="project-links">
-                <a href="https://study-nook-client-46py.vercel.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
-                <a href="https://github.com/SultanaBristy226/study_nook_client-" target="_blank"><i class="fab fa-github"></i> Client Repo</a>
-                <a href="https://github.com/SultanaBristy226/study_nook_server" target="_blank"><i class="fas fa-server"></i> Server Repo</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-icon"><i class="fas fa-tools"></i></div>
-            <h3>Digital Tools Platform</h3>
-            <span class="project-tag">frontend · tool hub</span>
-            <p>Collection of digital utility tools with clean interface and responsive design.</p>
-            <div class="project-links">
-                <a href="https://digitaltoolsflatform.netlify.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
-                <a href="https://github.com/SultanaBristy226/Digitools-platform" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
-            <h3>Keen Keepers</h3>
-            <span class="project-tag">frontend · security</span>
-            <p>Security awareness platform with modern UI and informative resources.</p>
-            <div class="project-links">
-                <a href="https://keen-keepers.netlify.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
-                <a href="https://github.com/SultanaBristy226/Keen-Keeper" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <div class="project-icon"><i class="fas fa-hand-holding-heart"></i></div>
-            <h3>GitHub Issues Tracker</h3>
-            <span class="project-tag">frontend · nonprofit</span>
-            <p>Nonprofit organization landing page with donation and volunteer sections.</p>
-            <div class="project-links">
-                <a href="https://benevolent-fox-c89254.netlify.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
-                <a href="https://github.com/SultanaBristy226/GitHub-Issues-Tracker" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="info-row" id="contact">
-    <div class="info-col">
-        <h3><i class="fas fa-graduation-cap"></i> education</h3>
-        <ul>
-            <li><i class="fas fa-university"></i> <strong>BSc in CSE</strong><br>Bangladesh Army International University of Science & Technology <br>3rd year · CGPA 3.50</li>
-            <li><i class="fas fa-school"></i> <strong>HSC</strong><br>Ispahani Public School & College (2020-2021)<br>GPA 5.00</li>
-            <li><i class="fas fa-school"></i> <strong>SSC</strong><br>Cumilla Cantonment Board Girls High School (2018-2019)<br>GPA 5.00</li>
-        </ul>
-    </div>
-    
-    <div class="info-col">
-        <h3><i class="fas fa-paper-plane"></i> connect</h3>
-        <ul>
-            <li><i class="fas fa-phone-alt"></i> <a href="tel:+8801837499226">+880 1837-499226</a></li>
-            <li><i class="fas fa-envelope"></i> <a href="mailto:bristysultana4@gmail.com">bristysultana4@gmail.com</a></li>
-            <li><i class="fab fa-github"></i> <a href="https://github.com/SultanaBristy226" target="_blank">github.com/SultanaBristy226</a></li>
-            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sultana-bristy-830203311" target="_blank">linkedin.com/in/sultana-bristy</a></li>
-        </ul>
-    </div>
-    
-    <div class="info-col">
-        <h3><i class="fas fa-user"></i> more about me</h3>
-        <ul>
-            <li><i class="fas fa-chart-line"></i> data science & ML with AI</li>
-            <li><i class="fas fa-pencil-ruler"></i> 2 UI/UX projects (complete)</li>
-            <li><i class="fas fa-file-code"></i> 6+ frontend & fullstack projects (live)</li>
-            <li><i class="fas fa-brain"></i> numpy, pandas, SQL, django, MERN</li>
-        </ul>
-    </div>
-</div>
-            
-
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h4>Habiba Sultana Bristy</h4>
-                <ul>
-                    <li><i class="fas fa-map-pin"></i> CSE 3rd Year, BAIUST</li>
-                    <li><i class="fas fa-code"></i> Frontend | UI/UX | ML | MERN</li>
-                    <li><i class="fas fa-award"></i> CGPA 3.50</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                    <li><a href="#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
-                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Projects</h4>
-                <ul>
-                    <li><a href="https://www.behance.net/sultanabristy" target="_blank"><i class="fab fa-behance"></i> Behance</a></li>
-                    <li><a href="https://github.com/SultanaBristy226" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
-                    <li><a href="https://sultanabristy226.github.io/Tea_House/" target="_blank"><i class="fas fa-mug-hot"></i> Tea House</a></li>
-                    <li><a href="https://sultanabristy226.github.io/assignment-num2/" target="_blank"><i class="fas fa-podcast"></i> TechWave</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Connect</h4>
-                <div class="footer-social">
-                    <a href="https://github.com/SultanaBristy226" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/sultana-bristy-830203311" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.behance.net/sultanabristy" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
-                    <a href="https://www.facebook.com/sultana.bristy.2024" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/sultana_bristyyy" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <h2> featured projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1: My Court -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-gavel"></i></div>
+                    <h3>My Court</h3>
+                    <span class="project-tag">UI/UX · Legal Access Bangladesh</span>
+                    <p>Case study for improving legal access in Bangladesh. Complete UX research, wireframing, and high-fidelity prototype.</p>
+                    <div class="project-links">
+                        <a href="https://www.behance.net/gallery/227085317/My-Court-Legal-Access-in-Bangladesh-Case-Study/modules/1299321165" target="_blank"><i class="fab fa-behance"></i> Behance</a>
+                    </div>
                 </div>
-                <p style="margin-top: 25px;"><i class="fas fa-envelope" style="color: #b27bf5;"></i> <a href="mailto:bristysultana4@gmail.com" style="color: #b8a3d9;">bristysultana4@gmail.com</a></p>
+
+                <!-- Project 2: Prottoyon App -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Prottoyon App</h3>
+                    <span class="project-tag">UI/UX · Case Study</span>
+                    <p>Inclusive design case study for an app focused on accessibility and community support.</p>
+                    <div class="project-links">
+                        <a href="https://www.behance.net/gallery/226506831/Prottoyon-App-Case-Study/modules/1295506681" target="_blank"><i class="fab fa-behance"></i> Behance</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: TechWave -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-podcast"></i></div>
+                    <h3>TechWave</h3>
+                    <span class="project-tag">frontend · podcast landing</span>
+                    <p>Modern, responsive podcast landing page with episode cards and host section.</p>
+                    <div class="project-links">
+                        <a href="https://sultanabristy226.github.io/assignment-num2/" target="_blank"><i class="fas fa-globe"></i> Live</a>
+                        <a href="https://github.com/SultanaBristy226/assignment-num2" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Tea House -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-mug-hot"></i></div>
+                    <h3>Tea House</h3>
+                    <span class="project-tag">frontend · product landing</span>
+                    <p>Elegant landing page for a premium tea brand. Features product showcase and customer testimonials.</p>
+                    <div class="project-links">
+                        <a href="https://sultanabristy226.github.io/Tea_House/" target="_blank"><i class="fas fa-globe"></i> Live</a>
+                        <a href="https://github.com/SultanaBristy226/Tea_House" target="_blank"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+
+                <!-- Project 5: Qurbani Hat -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-store"></i></div>
+                    <h3>Qurbani Hat</h3>
+                    <span class="project-tag">full stack · MERN</span>
+                    <p>E-commerce platform for qurbani animal trading with user authentication and product management.</p>
+                    <div class="project-links">
+                        <a href="https://qurbani-hat-syxl.vercel.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                        <a href="https://github.com/SultanaBristy226/QurbaniHat" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+                    </div>
+                </div>
+
+                <!-- Project 6: Study Nook -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Study Nook</h3>
+                    <span class="project-tag">full stack · MERN</span>
+                    <p>Interactive study platform for students with resource management and collaborative features.</p>
+                    <div class="project-links">
+                        <a href="https://study-nook-client-46py.vercel.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                        <a href="https://github.com/SultanaBristy226/study_nook_client-" target="_blank"><i class="fab fa-github"></i> Client Repo</a>
+                        <a href="https://github.com/SultanaBristy226/study_nook_server" target="_blank"><i class="fas fa-server"></i> Server Repo</a>
+                    </div>
+                </div>
+
+                <!-- Project 7: Digital Tools Platform -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Digital Tools Platform</h3>
+                    <span class="project-tag">frontend · tool hub</span>
+                    <p>Collection of digital utility tools with clean interface and responsive design.</p>
+                    <div class="project-links">
+                        <a href="https://digitaltoolsflatform.netlify.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                        <a href="https://github.com/SultanaBristy226/Digitools-platform" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+                    </div>
+                </div>
+
+                <!-- Project 8: Keen Keepers -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Keen Keepers</h3>
+                    <span class="project-tag">frontend · security</span>
+                    <p>Security awareness platform with modern UI and informative resources.</p>
+                    <div class="project-links">
+                        <a href="https://keen-keepers.netlify.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                        <a href="https://github.com/SultanaBristy226/Keen-Keeper" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+                    </div>
+                </div>
+
+                <!-- Project 9: GitHub Issues Tracker -->
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-bug"></i></div>
+                    <h3>GitHub Issues Tracker</h3>
+                    <span class="project-tag">frontend · issue tracking</span>
+                    <p>Track and manage GitHub issues efficiently with a clean dashboard interface and real-time updates.</p>
+                    <div class="project-links">
+                        <a href="https://benevolent-fox-c89254.netlify.app/" target="_blank"><i class="fas fa-globe"></i> Live Demo</a>
+                        <a href="https://github.com/SultanaBristy226/GitHub-Issues-Tracker" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== EDUCATION & CONTACT INFO ========== -->
+        <div class="info-row" id="contact">
+            <!-- Education Column -->
+            <div class="info-col">
+                <h3><i class="fas fa-graduation-cap"></i> education</h3>
+                <ul>
+                    <li><i class="fas fa-university"></i> <strong>BSc in CSE</strong><br>Bangladesh Army International University of Science & Technology <br>3rd year · CGPA 3.50</li>
+                    <li><i class="fas fa-school"></i> <strong>HSC</strong><br>Ispahani Public School & College (2020-2021)<br>GPA 5.00</li>
+                    <li><i class="fas fa-school"></i> <strong>SSC</strong><br>Cumilla Cantonment Board Girls High School (2018-2019)<br>GPA 5.00</li>
+                </ul>
+            </div>
+            
+            <!-- Contact Column -->
+            <div class="info-col">
+                <h3><i class="fas fa-paper-plane"></i> connect</h3>
+                <ul>
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:+8801837499226">+880 1837-499226</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:bristysultana4@gmail.com">bristysultana4@gmail.com</a></li>
+                    <li><i class="fab fa-github"></i> <a href="https://github.com/SultanaBristy226" target="_blank">github.com/SultanaBristy226</a></li>
+                    <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/sultana-bristy-830203311" target="_blank">linkedin.com/in/sultana-bristy</a></li>
+                </ul>
+            </div>
+            
+            <!-- About Me Column -->
+            <div class="info-col">
+                <h3><i class="fas fa-user"></i> more about me</h3>
+                <ul>
+                    <li><i class="fas fa-chart-line"></i> data science & ML with AI</li>
+                    <li><i class="fas fa-pencil-ruler"></i> 2 UI/UX projects (complete)</li>
+                    <li><i class="fas fa-file-code"></i> 6+ frontend & fullstack projects (live)</li>
+                    <li><i class="fas fa-brain"></i> numpy, pandas, SQL, django, MERN</li>
+                </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 Habiba Sultana Bristy · All rights reserved</p>
-        </div>
-    </footer>
+
+        <!-- ========== FOOTER ========== -->
+        <footer class="site-footer">
+            <div class="footer-container">
+                <!-- About Column -->
+                <div class="footer-col">
+                    <h4>Habiba Sultana Bristy</h4>
+                    <ul>
+                        <li><i class="fas fa-map-pin"></i> CSE 3rd Year, BAIUST</li>
+                        <li><i class="fas fa-code"></i> Frontend | UI/UX | ML | MERN</li>
+                        <li><i class="fas fa-award"></i> CGPA 3.50</li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="#skills"><i class="fas fa-chevron-right"></i> Skills</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Projects Column -->
+                <div class="footer-col">
+                    <h4>Projects</h4>
+                    <ul>
+                        <li><a href="https://www.behance.net/sultanabristy" target="_blank"><i class="fab fa-behance"></i> Behance</a></li>
+                        <li><a href="https://github.com/SultanaBristy226" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                        <li><a href="https://sultanabristy226.github.io/Tea_House/" target="_blank"><i class="fas fa-mug-hot"></i> Tea House</a></li>
+                        <li><a href="https://sultanabristy226.github.io/assignment-num2/" target="_blank"><i class="fas fa-podcast"></i> TechWave</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Connect/Social Column -->
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="footer-social">
+                        <a href="https://github.com/SultanaBristy226" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/sultana-bristy-830203311" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.behance.net/sultanabristy" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+                        <a href="https://www.facebook.com/sultana.bristy.2024" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/sultana_bristyyy" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p style="margin-top: 25px;"><i class="fas fa-envelope" style="color: #b27bf5;"></i> <a href="mailto:bristysultana4@gmail.com" style="color: #b8a3d9;">bristysultana4@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Habiba Sultana Bristy · All rights reserved</p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
